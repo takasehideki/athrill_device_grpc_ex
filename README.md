@@ -1,21 +1,38 @@
 # AthrillDeviceGrpcEx
 
-**TODO: Add description**
+## Quick Start
 
-## Installation
+### Compile
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `athrill_device_grpc_ex` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:athrill_device_grpc_ex, "~> 0.1.0"}
-  ]
-end
+```shell
+$ mix do deps.get, compile
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/athrill_device_grpc_ex](https://hexdocs.pm/athrill_device_grpc_ex).
+### Start server app
 
+```shell
+$ mix grpc.server
+
+11:39:26.240 [info]  Running Endpoint with Cowboy using http://0.0.0.0:50051
+```
+
+### Run client script (on another terminal)
+
+```shell
+$ mix run priv/sample_client.ex
+
+11:39:40.707 [info]  Call request of example.SampleService
+
+11:39:40.745 [info]  Got :ok in 33ms
+%Example.SampleReply{ercd: "324", message: "Hello grpc-elixir"}
+
+```
+
+Then, the terminal with server app will output the below message
+
+```shell
+
+11:39:40.733 [info]  Handled by SampleServer.request
+
+11:39:40.734 [info]  Response :ok in 629µs
+```
