@@ -15,7 +15,7 @@ defmodule AthrillDeviceGrpcEx.MixProject do
   def application do
     [
       mod: {SampleServerApp, []},
-      extra_applications: [:logger]
+      extra_applications: [:logger, :grpc]
     ]
   end
 

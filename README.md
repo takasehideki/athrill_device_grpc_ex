@@ -16,6 +16,12 @@ $ mix grpc.server
 12:04:54.416 [info]  Running AthrillDeviceGrpcEx.Endpoint with Cowboy using http://0.0.0.0:50051
 ```
 
+You can also invoke a server when starting iex with `MIX_ENV=prod`
+
+```shell
+MIX_ENV=prod iex -S mix
+```
+
 ### Run client script (on another terminal)
 
 ```shell
