@@ -13,7 +13,7 @@ $ mix do deps.get, compile
 ```shell
 $ mix grpc.server
 
-11:39:26.240 [info]  Running Endpoint with Cowboy using http://0.0.0.0:50051
+11:39:26.240 [info]  Running AthrillDeviceGrpcEx.Endpoint with Cowboy using http://0.0.0.0:50051
 ```
 
 ### Run client script (on another terminal)
