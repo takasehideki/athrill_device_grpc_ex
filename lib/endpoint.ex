@@ -1,4 +1,4 @@
-defmodule AthrillDeviceGrpcEx.Endpoint do
+defmodule SampleServer.Endpoint do
   use GRPC.Endpoint
 
   intercept GRPC.Logger.Server

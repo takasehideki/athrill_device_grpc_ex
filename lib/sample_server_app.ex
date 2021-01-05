@@ -5,7 +5,7 @@ defmodule SampleServerApp do
     import Supervisor.Spec
 
     children = [
-      supervisor(GRPC.Server.Supervisor, [{AthrillDeviceGrpcEx.Endpoint, 50051}])
+      supervisor(GRPC.Server.Supervisor, [{SampleServer.Endpoint, 50051}])
     ]
 
     opts = [strategy: :one_for_one, name: SampleServerApp]
