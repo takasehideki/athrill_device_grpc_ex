@@ -1,6 +1,10 @@
 {:ok, channel} = GRPC.Stub.connect("localhost:50051", interceptors: [GRPC.Logger.Client])
 
-{:ok, reply} =
-  channel |> Example.SampleService.Stub.request(Example.SampleRequest.new(name: "grpc-elixir", clock: 100))
+user = "grpc-elixir"
+IO.inspect("Start: user=#{user}")
+req = Example.SampleRequest.new(name: user)
+IO.inspect(req)
 
+{:ok, reply} =
+  channel |> Example.SampleService.Stub.request(req)
 IO.inspect(reply)

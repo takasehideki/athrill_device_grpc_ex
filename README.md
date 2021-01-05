@@ -13,26 +13,29 @@ $ mix do deps.get, compile
 ```shell
 $ mix grpc.server
 
-11:39:26.240 [info]  Running AthrillDeviceGrpcEx.Endpoint with Cowboy using http://0.0.0.0:50051
+12:04:54.416 [info]  Running AthrillDeviceGrpcEx.Endpoint with Cowboy using http://0.0.0.0:50051
 ```
 
 ### Run client script (on another terminal)
 
 ```shell
 $ mix run priv/sample_client.ex
+"Start: user=grpc-elixir"
+%Example.SampleRequest{clock: 0, name: "grpc-elixir"}
 
-11:39:40.707 [info]  Call request of example.SampleService
-
-11:39:40.745 [info]  Got :ok in 33ms
+12:05:08.017 [info]  Call request of example.SampleService
 %Example.SampleReply{ercd: "324", message: "Hello grpc-elixir"}
+
+12:05:08.069 [info]  Got :ok in 48ms
 
 ```
 
-Then, the terminal with server app will output the below message
+At the same time, the terminal with server app will output the below message
 
 ```shell
 
-11:39:40.733 [info]  Handled by SampleServer.request
+12:05:08.057 [info]  Handled by SampleServer.request
+"name=grpc-elixir clock=0"
 
-11:39:40.734 [info]  Response :ok in 629µs
+12:05:08.058 [info]  Response :ok in 1ms
 ```
